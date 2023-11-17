@@ -1,0 +1,7 @@
+@media (max-width: 500px) {
+  .input-div {
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem !important;
+  }
+}
