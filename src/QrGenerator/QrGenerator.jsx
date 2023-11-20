@@ -49,7 +49,7 @@ const QrGenerator = () => {
   const [inputValue, setInptValue] = useState("");
   const [qrStatus, setQrStatus] = useState(false);
   const [fileName, setFileName] = useState(inputValue);
-  const [dbData, setDbData] = useState();
+  const [dbData, setDbData] = useState([]);
   //  Download Qr
   const downloadWebP = () => {
     if (!fileName) {
@@ -111,7 +111,7 @@ const QrGenerator = () => {
           <Input.Wrapper label="Invitation QR Code">
             <Input
               onChange={(e) => {
-                setInptValue(e.target.value);
+                setInptValue(e.target.value.toString());
                 setQrStatus(false);
               }}
               size="md"
@@ -145,8 +145,9 @@ const QrGenerator = () => {
             <div>
               <QRCodeCanvas
                 value={inputValue}
-                size={300}
+                size={350}
                 fgColor="green"
+                level={"H"}
                 imageSettings={{
                   src: Name,
                   x: undefined,
@@ -155,7 +156,6 @@ const QrGenerator = () => {
                   width: 90,
                   excavate: true,
                 }}
-                level={"L"}
                 includeMargin={false}
               />
             </div>
