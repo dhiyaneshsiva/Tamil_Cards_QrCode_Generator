@@ -97,11 +97,11 @@ const QrGenerator = () => {
     });
   }, [inputValue]);
 
-  useEffect(() => {
-    if (inputValue) {
-      setFileName(inputValue.trim());
-    }
-  }, [inputValue]);
+  // useEffect(() => {
+  //   if (inputValue) {
+  //     setFileName(inputValue.trim());
+  //   }
+  // }, [inputValue]);
 
   return (
     <div>
@@ -139,7 +139,7 @@ const QrGenerator = () => {
           <div style={qrDiv} id="qrCodeDiv">
             <div>
               <Center>
-                <h1>{inputValue}</h1>
+                <h1>{fileName}</h1>
               </Center>
             </div>
             <div>
@@ -176,7 +176,6 @@ const QrGenerator = () => {
                   File Name:
                   <Input
                     onChange={(e) => setFileName(e.target.value)}
-                    variant={fileName ? "unstyled" : "default"}
                     size="sm"
                     radius="md"
                     value={`${fileName}`}
