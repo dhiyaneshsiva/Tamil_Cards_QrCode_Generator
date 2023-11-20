@@ -65,7 +65,7 @@ const QrGenerator = () => {
       const qrCodeDiv = document.getElementById("qrCodeDiv");
       if (qrCodeDiv) {
         html2canvas(qrCodeDiv).then((canvas) => {
-          const dataURL = canvas.toDataURL("image/webp");
+          const dataURL = canvas.toDataURL("image/jpg");
           const a = document.createElement("a");
           a.href = dataURL;
           a.download = `${fileName.replaceAll(" ", "_")}.jpg`;
