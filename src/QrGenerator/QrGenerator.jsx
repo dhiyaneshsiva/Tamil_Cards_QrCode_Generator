@@ -34,7 +34,7 @@ const inputDiv = {
   justifyContent: "center",
   alignItems: "center",
   gap: "2rem",
-  marginTop: "4rem",
+  marginTop: "2rem",
 };
 
 const qrDiv = {
@@ -176,7 +176,7 @@ const QrGenerator = () => {
 
         {/* Download Button */}
         {qrStatus && (
-          <div>
+          <div style={{ marginTop: "3rem" }}>
             <Center>
               <Input.Wrapper
                 error={`${
