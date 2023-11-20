@@ -4,24 +4,28 @@ import "./QrGenerator.css";
 // Mantine Core
 import { Button, Center, Flex, Input, ThemeIcon } from "@mantine/core";
 
-// Qr Code
-import QRCode from "react-qr-code";
-
 // Qr to Image
 import html2canvas from "html2canvas";
 
 // Mantine Notification
 import { showNotification } from "@mantine/notifications";
 
-// Tabler ICons
-import { X } from "tabler-icons-react";
+// QR Code
+import { QRCodeCanvas } from "qrcode.react";
 
 // Firebase Database
 import { db } from "../Firebase/Firebase";
 
+// ANTD Qr Code
+import { QRCode } from "antd";
+
+// Image
+import Name from "../Assets/Tamil cards QR.png";
+
 // uid
 import { uid } from "uid";
 import { onValue, ref, set } from "firebase/database";
+import { X } from "tabler-icons-react";
 // CSS
 const inputDiv = {
   width: "100%",
@@ -41,6 +45,7 @@ const qrDiv = {
   justifyContent: "center",
   alignItems: "center",
   padding: "2rem",
+  flexDirection: "column",
 };
 
 const downloadContainer = {
@@ -114,9 +119,7 @@ const QrGenerator = () => {
       <div>
         {/* Input & Button */}
         <div style={inputDiv} className="input-div">
-          <Input.Wrapper
-          label="Qr Code Value"
-          >
+          <Input.Wrapper label="Invitation QR Code">
             <Input
               onChange={(e) => {
                 setInptValue(e.target.value);
@@ -127,22 +130,46 @@ const QrGenerator = () => {
               placeholder="Type here....."
             />
           </Input.Wrapper>
-          <Button
-            onClick={() => {
-              setQrStatus(true);
-              writeData();
-            }}
-            size="md"
-          >
-            Generate QR Code
-          </Button>
+          <Input.Wrapper label="">
+            <Button
+              mt={"1.5rem"}
+              onClick={() => {
+                setQrStatus(true);
+                writeData();
+              }}
+              size="md"
+            >
+              Generate QR Code
+            </Button>
+          </Input.Wrapper>
         </div>
         {/* Input & Button End */}
 
         {/* Qr Code */}
         {qrStatus && (
           <div style={qrDiv} id="qrCodeDiv">
-            <QRCode value={`${inputValue} powered by Tamil Cards`} />
+            <div>
+              <Center>
+                <h1>{inputValue}</h1>
+              </Center>
+            </div>
+            <div>
+              <QRCodeCanvas
+                value={inputValue}
+                size={300}
+                fgColor="green"
+                imageSettings={{
+                  src: Name,
+                  x: undefined,
+                  y: undefined,
+                  height: 100,
+                  width: 90,
+                  excavate: true,
+                }}
+                level={"L"}
+                includeMargin={false}
+              />
+            </div>
           </div>
         )}
         {/* Qr Code End */}
