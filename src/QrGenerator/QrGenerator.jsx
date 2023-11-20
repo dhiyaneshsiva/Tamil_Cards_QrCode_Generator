@@ -40,19 +40,11 @@ const inputDiv = {
 const qrDiv = {
   width: "fit-content",
   margin: "auto",
-  height: "50vh",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   padding: "2rem",
   flexDirection: "column",
-};
-
-const downloadContainer = {
-  width: "100%",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
 };
 
 const QrGenerator = () => {
@@ -156,7 +148,7 @@ const QrGenerator = () => {
             <div>
               <QRCodeCanvas
                 value={inputValue}
-                size={300}
+                size={250}
                 fgColor="green"
                 imageSettings={{
                   src: Name,
