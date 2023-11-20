@@ -16,11 +16,8 @@ import { QRCodeCanvas } from "qrcode.react";
 // Firebase Database
 import { db } from "../Firebase/Firebase";
 
-// ANTD Qr Code
-import { QRCode } from "antd";
-
 // Image
-import Name from "../Assets/Tamil cards QR.png";
+import Name from "../Assets/Name.png";
 
 // uid
 import { uid } from "uid";
@@ -148,7 +145,7 @@ const QrGenerator = () => {
             <div>
               <QRCodeCanvas
                 value={inputValue}
-                size={250}
+                size={300}
                 fgColor="green"
                 imageSettings={{
                   src: Name,
@@ -168,7 +165,7 @@ const QrGenerator = () => {
 
         {/* Download Button */}
         {qrStatus && (
-          <div style={{ marginTop: "3rem" }}>
+          <div style={{ marginTop: "1rem" }}>
             <Center>
               <Input.Wrapper
                 error={`${
