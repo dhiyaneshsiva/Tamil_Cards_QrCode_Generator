@@ -68,7 +68,7 @@ const QrGenerator = () => {
           const dataURL = canvas.toDataURL("image/webp");
           const a = document.createElement("a");
           a.href = dataURL;
-          a.download = `${fileName.replaceAll(" ", "_")}.webp`;
+          a.download = `${fileName.replaceAll(" ", "_")}.png`;
           a.click();
         });
       }
