@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Tamil_Cards_QrCode_Generator/static/css/main.08eb0fe7.css",
-    "main.js": "/Tamil_Cards_QrCode_Generator/static/js/main.98e77a64.js",
+    "main.js": "/Tamil_Cards_QrCode_Generator/static/js/main.ad06aa37.js",
     "static/media/Tamil cards QR.png": "/Tamil_Cards_QrCode_Generator/static/media/Tamil cards QR.20332956273304c4b6ce.png",
     "index.html": "/Tamil_Cards_QrCode_Generator/index.html",
     "main.08eb0fe7.css.map": "/Tamil_Cards_QrCode_Generator/static/css/main.08eb0fe7.css.map",
-    "main.98e77a64.js.map": "/Tamil_Cards_QrCode_Generator/static/js/main.98e77a64.js.map"
+    "main.ad06aa37.js.map": "/Tamil_Cards_QrCode_Generator/static/js/main.ad06aa37.js.map"
   },
   "entrypoints": [
     "static/css/main.08eb0fe7.css",
-    "static/js/main.98e77a64.js"
+    "static/js/main.ad06aa37.js"
   ]
 }
